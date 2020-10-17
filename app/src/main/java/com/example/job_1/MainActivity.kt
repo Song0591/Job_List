@@ -28,14 +28,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //กดกลับออกโปรแกรม
+    //ทำการปิดโปรแกรมด้วยการกดกลับ
     private var backPressTime=0L;
     override fun onBackPressed() {
         if (backPressTime + 2000 > System.currentTimeMillis()){
             super.onBackPressed()
         }else{
-            Toast.makeText(applicationContext,"Press back again to exit application"
-                    ,Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Press back again to exit application",Toast.LENGTH_SHORT)
         }
         backPressTime = System.currentTimeMillis()
     }
@@ -108,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this@MainActivity, InformationActivity::class.java)
                         intent.putExtra("Num", j)
                         startActivity(intent)
+                        finish ()
                     }
                     j++
                 }
