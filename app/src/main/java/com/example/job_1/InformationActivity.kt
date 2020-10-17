@@ -26,8 +26,8 @@ class InformationActivity : AppCompatActivity() {
         //Button สำหรับกดกลับไป MainActivity
         val mButton = findViewById<Button>(R.id.btn_back)
         mButton.setOnClickListener{
-            startActivity(Intent(this, MainActivity::class.java)) }
-
+            startActivity(Intent(this, MainActivity::class.java))
+            finish ()}
     }
 
     override fun onBackPressed() {
